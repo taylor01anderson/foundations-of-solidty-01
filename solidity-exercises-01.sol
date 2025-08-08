@@ -115,3 +115,52 @@ contract learnArrays {
     }
 }
 
+// Learning enumerated variables
+// Enums restrict a variable to have only one of only a few predefined values.
+// This contract teaches enums by offering a small medium or large fry
+contract enumsLearn {
+    // instantiate enum
+    enum frenchFriesSize {LARGE, MEDIUM, SMALL}
+
+    // define choice varibes to allow for options
+    frenchFriesSize choice; 
+
+    // define default choice
+    frenchFriesSize constant defaultChoice = frenchFriesSize.MEDIUM;
+
+    // create function to allow choice of size
+    function setSmall() public {
+        choice = frenchFriesSize.SMALL;
+    }
+
+    // function to display size
+    function getChoice() public view returns(frenchFriesSize) {
+        return choice; 
+    }
+
+    // function to return default choice
+    function getDefaultchoice() public pure returns (uint) {
+        return uint (defaultChoice); 
+    }
+
+}
+
+// Exercise 02 Enum practice
+
+contract enumExercise {
+    enum shirtColor {RED, WHITE, BLUE}
+    shirtColor choice;
+    shirtColor constant defaultChoice = shirtColor.BLUE;
+
+    function setWhite() public {
+        choice = shirtColor.WHITE;
+    }
+
+    function getChoice() public view returns (shirtColor) {
+        return choice;
+    }
+
+    function getDefaultChoice() public pure returns(uint) {
+        return uint(defaultChoice);
+    }
+}
