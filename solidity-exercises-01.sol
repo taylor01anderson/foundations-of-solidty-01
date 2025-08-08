@@ -37,3 +37,23 @@ contract teacherVariable is Member {
         return name;
     }
 }
+
+// Constructor exercise 01:
+// Contract that stores fully accessible (inside and outside) integer data upon deployment
+
+contract Base {
+    uint numberOne;
+
+    constructor (uint _one) {
+     numberOne = _one;
+    }
+}
+
+// Contract that derives data from the above the Base contract that runs a function and outputs the data to 5
+
+contract Derived is Base (5) {
+
+    function get5() public view returns(uint) {
+        return numberOne; 
+    }
+}
