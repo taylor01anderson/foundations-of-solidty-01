@@ -164,3 +164,99 @@ contract enumExercise {
         return uint(defaultChoice);
     }
 }
+
+// Learning Structures
+
+contract learnStructs {
+    // create a struct
+    struct Movie {
+        string title; 
+        string director;
+        uint movie_id;
+    }
+    
+    // set the struct to a variable
+    Movie movie;
+
+    // create new movie with same struct
+    Movie comedy;
+
+    // Set values for the struct
+    function setMovie() public {
+        // set movie to a test movies
+       // movie = Movie('Blade Runner', 'Ridley Scott', 1);
+       // set movie to a comedy
+       comedy = Movie('Zoolanders', 'Ben Stiller', 2);
+
+    }
+
+    // Get struct values
+    function getMovieId() public view returns (uint) {
+        return movie.movie_id;
+    }
+}
+
+// Learning mapping
+// Mapping creates a references with a key and a value to create a library to access
+// No looping or iterating
+// No retreiving size
+
+contract learnMapping {
+    // Create a key and value pair through mapping
+    // key is address value is uint
+    mapping(address => uint) public myMap;
+
+    // set values to addresses
+    function setAddress(address _addr, uint _i) public {
+        myMap[_addr] = _i;
+    }
+
+    // Get index of address
+    function getAddress(address _addr) public view returns(uint) {
+        return myMap[_addr];
+    }
+
+    // Remove address
+    function removeAddress(address _addr) public {
+        delete myMap[_addr];
+    }
+}
+
+// Exercise 03: Struct Practice
+// Integrate structs and maps
+
+contract structExercies {
+
+    // create movie map
+    mapping(uint => Movie) movie;
+
+    // create Movie struct
+    struct Movie {
+        string title;
+        string director;
+    }
+
+    // create function to add id as key and title and director as values
+    function addMovie(uint id, string memory title, string memory director) public {
+        movie[id] = Movie(title, director);
+    }
+}
+
+// Learning nested mapping
+
+contract nestedMapping {
+
+    // Create a nested map
+    mapping(address => mapping(uint => Movie)) public myMovie; 
+
+    struct Movie {
+        string title;
+        string director;
+    }
+
+    // create function to add id as key and title and director as values
+    function addmyMovie(uint id, string memory title, string memory director) public {
+        // msg.sender is a global variable which captures the address that is calling the contract
+        myMovie[msg.sender][id] = Movie(title, director);
+    }
+}
