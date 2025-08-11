@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Solidity Exercises 01
+# Exercises for the Foundations of Solidity and Smart Contract Development Certificate by <pact> on coursera
 
 ## Table of Contents
 
