@@ -11,7 +11,7 @@
 
 ## Description
 
-- Exerceises in the Remix IDE to learn constructors, arrays, loops, enumerated variables, structures, and mapping. 
+- Exercises in the Remix IDE to learn constructors, arrays, loops, enumerated variables, structures, and mapping. 
 
 ## License
 
